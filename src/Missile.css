@@ -1,0 +1,26 @@
+.missile {
+    width: 40px;
+    height: 100px;
+    background-color: gray;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 2s linear;
+  }
+  
+  .missile.landed {
+    animation: explosion 0.5s ease-in;
+  }
+  
+  @keyframes explosion {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+  

@@ -1,4 +1,4 @@
-import '../Gaza.css';
+import './Gaza.css';
 import { Link } from 'react-router-dom';
 
 
