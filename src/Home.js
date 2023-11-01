@@ -8,15 +8,15 @@ function Home() {
         window.alert("המשחק עדיין בפיתוח. נא בדוק מאוחר יותר.");
     };
 
-    useEffect(() => {
-        const audioElement = new Audio(song);
-        audioElement.play();
+    // useEffect(() => {
+    //     const audioElement = new Audio(song);
+    //     audioElement.play();
 
-        return () => {
-            audioElement.pause();
-            audioElement.currentTime = 0;
-        };
-    }, []);
+    //     return () => {
+    //         audioElement.pause();
+    //         audioElement.currentTime = 0;
+    //     };
+    // }, []);
 
     return (
         <div className="escape-room">
