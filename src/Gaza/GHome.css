@@ -9,7 +9,7 @@
   color: rgb(251, 181, 94);
   font-weight: bold;
   text-align: center;
-  background-color: rgb(199, 109, 0);
+  background-color: rgb(31, 96, 0);
 }
 
 .countdown-timer {
@@ -35,16 +35,6 @@
   height: 615px;
 }
 
-/* .GbuttonStyle {
-    color: rgb(251, 181, 94);
-    text-decoration: none;
-    font-size: 30px;
-    -webkit-text-stroke: 1.5px black;
-    border: 3px solid rgb(251, 181, 94);
-    background-color: black;
-    transition: background-color 0.3s;
-} */
-
 .GbuttonStyle {
   position: relative;
   color: rgb(251, 181, 94);
@@ -54,6 +44,7 @@
   border: 3px solid rgb(251, 181, 94);
   background-color: black;
   transition: background-color 0.3s;
+  font-weight: bold;
 }
 
 .GbuttonStyle:hover {
@@ -92,4 +83,14 @@
 
 .GbuttonStyle:hover::before {
   opacity: 1;
+}
+
+#puzzle-container{
+  text-align: center;
+  align-items: center;
+  
+}
+
+#puzzle{
+  size: 30px 40px;
 }
