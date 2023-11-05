@@ -1,7 +1,7 @@
 import React from 'react';
 import './GHome.css';
 import { Link } from 'react-router-dom';
-import Stopwatch from '../components/Stopwatch'; 
+import Stopwatch from '../components/Stopwatch';
 import Missile from '../components/Missile';
 import GazaMap from '../images/GazaMap3.png';
 
@@ -14,12 +14,12 @@ const GHome = () => {
   return (
     <div className='GHome-room'>
       <Stopwatch />
-      <img src={GazaMap} alt='' id="GazaMap"/>
-      
-      
-      {/* <Link to="/Egypt" className="GbuttonStyle">יציאה דרך ישראל</Link>
-      <Link to="/Egypt" className="GbuttonStyle">יציאה דרך מצרים</Link>
-      <Link to="/Egypt" className="GbuttonStyle">בריחה בהפלגה</Link> */}
+      <div id='GazaMap' className="GazaMap-container">
+        <Link to="/Egypt" className="GbuttonStyle" id='Erez'>Check point Erez</Link>
+        <Link to="/GazaPort" className="GbuttonStyle" id='GazaPort'>ميناء غزة البحري - الصيادين</Link>
+        <Link to="/Egypt" className="GbuttonStyle" id='Rafiah'>رفيع</Link>
+      </div>
+
     </div>
   );
 }

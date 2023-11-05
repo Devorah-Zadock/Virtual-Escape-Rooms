@@ -1,36 +1,95 @@
 .GHome-room {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    /* height: 100vh; */
-    padding: 20px;
-    font-size: 40px;
-    -webkit-text-stroke: 1.5px black;
-    color: rgb(251, 181, 94);
-    font-weight: bold;
-    text-align: center;
-    background-color: rgb(255, 208, 151);
-    /* background-image: url("../images/Gaza2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  font-size: 40px;
+  -webkit-text-stroke: 1.5px black;
+  color: rgb(251, 181, 94);
+  font-weight: bold;
+  text-align: center;
+  background-color: rgb(199, 109, 0);
 }
 
 .countdown-timer {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-right: 1400px;
+  border: 3px solid black;
+  background-color: rgb(251, 181, 94);
+  padding: 10px;
+}
+
+#GazaMap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-image: url('../images/GazaMap4.png');
+  background-size: 300px 610px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 700px;
+  height: 615px;
+}
+
+/* .GbuttonStyle {
+    color: rgb(251, 181, 94);
+    text-decoration: none;
     font-size: 30px;
-    margin-bottom: 20px;
-    margin-right: 1400px;
-    border: 3px solid rgb(0, 76, 255);
-    background-color: #38cff9;
-    padding: 10px;
+    -webkit-text-stroke: 1.5px black;
+    border: 3px solid rgb(251, 181, 94);
+    background-color: black;
+    transition: background-color 0.3s;
+} */
+
+.GbuttonStyle {
+  position: relative;
+  color: rgb(251, 181, 94);
+  text-decoration: none;
+  font-size: 30px;
+  -webkit-text-stroke: 1.5px black;
+  border: 3px solid rgb(251, 181, 94);
+  background-color: black;
+  transition: background-color 0.3s;
 }
 
-.GbuttonStyle{
-    width: 400px;
-    height: 200px;
+.GbuttonStyle:hover {
+  background-color: rgb(255, 208, 151);
 }
 
-#GazaMap{
-    width: 536px;
+.GbuttonStyle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+#Erez::before {
+  background-image: url('../images/israel2.jpg');
+  background-size: 250px 100px;
+  bottom: -100px;
+}
+
+#GazaPort::before {
+  background-image: url('../images/GazaPort.jpg');
+  background-size: 340px 100px;
+  bottom: -100px;
+
+}
+
+#Rafiah::before {
+  background-image: url('../images/Rafiah.png');
+  background-size: 340px 100px;
+  top: -100px;
+}
+
+.GbuttonStyle:hover::before {
+  opacity: 1;
 }

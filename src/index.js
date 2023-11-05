@@ -5,6 +5,7 @@ import './index.css';
 import Home from './Home'
 import Gaza from './Gaza/Gaza';
 import GHome from './Gaza/GHome';
+import GazaPort from './Gaza/GazaPort';
 import Egypt from './Gaza/Egypt';
 
 const router = createBrowserRouter([
@@ -21,9 +22,14 @@ const router = createBrowserRouter([
     element: <GHome/>
   },
   {
+    path:"/GazaPort",
+    element: <GazaPort/>
+  },
+  {
     path:"/Egypt",
     element: <Egypt/>
   },
+  
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

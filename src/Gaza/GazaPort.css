@@ -1,0 +1,20 @@
+.Gaza-Port{
+    background-image: url("../images/GazaBoats.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#btnCode{
+    font-size: 30px;
+    background-image: url("../images/lock.jpg");
+    background-size: auto 100px;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
