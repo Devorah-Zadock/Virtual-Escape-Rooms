@@ -85,12 +85,15 @@
   opacity: 1;
 }
 
-#puzzle-container{
+/* .puzzle-container {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   align-items: center;
-  
+  justify-content: center;
 }
 
-#puzzle{
-  size: 30px 40px;
-}
+#puzzle {
+  width: 30px;
+  height: 40px;
+} */

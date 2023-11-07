@@ -1,9 +1,11 @@
-.Gaza-room {
-    background-image: url('../images/Gaza.jpg');
+body {
+    background-image: url('../images/Gaza2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
 
+.Gaza-room {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,8 +13,8 @@
     height: 100vh;
     text-align: center;
     font-size: 25px;
-    -webkit-text-stroke: 1.5px black;
-    color: white;
+    -webkit-text-stroke: 0.7px white;
+    color: black;
     font-weight: bold;
 }
 

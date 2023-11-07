@@ -1,46 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './GHome.css';
 import { Link } from 'react-router-dom';
 import Stopwatch from '../components/Stopwatch';
-import Missile from '../components/Missile';
 import Puzzle1 from '../images/puzzle1.png';
-import Puzzle from '../components/Puzzle';
+import Popup from './Popup';
+import './Popup.css';
 
 const GHome = () => {
-  const openPuzzleWindow = () => {
-    const width = 600;
-    const height = 400;
-    const left = (window.innerWidth - width) / 2;
-    const top = (window.innerHeight - height) / 2;
 
-    const windowFeatures = `width=${width},height=${height},left=${left},top=${top}`;
+  const [isPopupOpen, setPopupOpen] = useState(false);
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
 
-    const puzzleWindow = window.open('', 'Puzzle Window', windowFeatures);
-    puzzleWindow.document.title = 'Puzzle Window';
-    puzzleWindow.document.body.innerHTML = '<div id="puzzle-container">' +
-      '<h1>שאלה</h1>' +
-      '<img src={Puzzle1} id="puzzle"></img>' +
-      '<input type="password" id="userInput" />' +
-      '<button onclick="checkUserInput()">OK</button>' +
-      '</div>';
-
-    puzzleWindow.checkUserInput = function () {
-      const userInput = puzzleWindow.document.getElementById('userInput').value;
-      if (userInput === "1234")
-        puzzleWindow.close();
-      else {
-        const userInputField = puzzleWindow.document.getElementById('userInput').value = '';
-      }
-    };
+  const openPopup = () => {
+    setPopupOpen(true);
   };
 
+  const closePopup = () => {
+    setPopupOpen(false);
+  };
+
+  const handleAnswerCorrect = () => {
+    setIsAnswerCorrect(true);
+  };
 
   return (
     <div className='GHome-room'>
       <Stopwatch />
       <div id='GazaMap' className="GazaMap-container">
         <button className="GbuttonStyle" id='Erez'>Check point Erez</button>
-        <button className="GbuttonStyle" id='GazaPort' onClick={openPuzzleWindow}>ميناء غزة البحري - الصيادين</button>
+        <button className="GbuttonStyle" id='GazaPort' onClick={isAnswerCorrect ? null : openPopup}>{isAnswerCorrect ? 'V' : 'ميناء غزة البحري - الصيادين'}</button>
+        <Popup isOpen={isPopupOpen} onClose={closePopup} img={Puzzle1} input="5741" onAnswerCorrect={handleAnswerCorrect} />
         <button className="GbuttonStyle" id='Rafiah'>رفيع</button>
       </div>
 
