@@ -27,9 +27,6 @@
     width: 180px;
     height: 40px;
     margin: 10px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: none;
     cursor: pointer;
     display: flex;
     flex-direction: column;

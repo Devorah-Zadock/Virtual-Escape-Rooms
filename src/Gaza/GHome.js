@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './GHome.css';
 import { Link } from 'react-router-dom';
 import Stopwatch from '../components/Stopwatch';
@@ -6,6 +6,7 @@ import Puzzle1 from '../images/puzzle1.png';
 import Missile from '../images/missile.jpg';
 import Popup from './Popup';
 import './Popup.css';
+import song from '../audio/background-music.mp3';
 import audioFile from '../audio/background-music2.mp3';
 
 const GHome = () => {
@@ -26,12 +27,18 @@ const GHome = () => {
     setIsAnswerCorrect(true);
   };
 
-  const handleCountdownCompletion  = () => {
+  const handleCountdownCompletion = () => {
     const audio = new Audio(audioFile);
     audio.play();
 
-    setImageVisible(true);    
+    setImageVisible(true);
   };
+
+  useEffect(() => {
+    const audioElement = new Audio(song);
+    audioElement.play();
+
+  }, []);
 
   return (
     <div className='GHome-room'>
