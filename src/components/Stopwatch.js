@@ -4,8 +4,8 @@ class Stopwatch extends Component {
   constructor() {
     super();
     this.state = {
-      initialTime: 600000, // 10 minutes in milliseconds
-      currentTime: 600000,
+      initialTime: 10000, // 30 seconds in milliseconds
+      currentTime: 10000,
     };
   }
 
@@ -22,6 +22,9 @@ class Stopwatch extends Component {
       this.setState(prevState => {
         if (prevState.currentTime <= 0) {
           this.stopCountdown();
+          if (this.props.onCountdownComplete) {
+            this.props.onCountdownComplete(); // Trigger the completion event
+          }
           return { currentTime: 0 };
         }
         return { currentTime: prevState.currentTime - 1000 };
@@ -39,7 +42,6 @@ class Stopwatch extends Component {
 
     return `${minutes}:${seconds}`;
   }
-
 
   render() {
     const { currentTime } = this.state;
