@@ -1,15 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-const Popup = ({ isOpen, onClose, img, input, onAnswerCorrect }) => {
+const Popup = ({ isOpen, onClose, img, input1, input2, onAnswerCorrect }) => {
   const [userInput, setUserInput] = useState('');
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      inputRef.current.focus();
+    }
+  }, [isOpen]);
 
   const handleCheck = () => {
-    if (userInput === input) {
+    if (userInput === input1 || userInput === input2) {
       setUserInput('');
       onAnswerCorrect();
       onClose();
     } else {
       setUserInput('');
+      alert("סיסמה שגויה");
+    }
+  }
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleCheck();
     }
   }
 
@@ -26,7 +40,13 @@ const Popup = ({ isOpen, onClose, img, input, onAnswerCorrect }) => {
           type="password"
           placeholder="הכנס קוד"
           value={userInput}
-          onChange={(e) => setUserInput(e.target.value)}
+          onChange={(e) => {
+            const value = e.target.value.replace(/\D/g, '');
+            setUserInput(value);
+          }}
+          onKeyPress={handleKeyPress}
+          ref={inputRef}
+          autoFocus
         />
         <button onClick={handleCheck}>אישור</button>
       </div>

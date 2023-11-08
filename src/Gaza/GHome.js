@@ -39,7 +39,7 @@ const GHome = () => {
       <div id='GazaMap' className="GazaMap-container">
         <button className="GbuttonStyle" id='Erez'>Check point Erez</button>
         <button className="GbuttonStyle" id='GazaPort' onClick={isAnswerCorrect ? null : openPopup}>{isAnswerCorrect ? 'V' : 'ميناء غزة البحري - الصيادين'}</button>
-        <Popup isOpen={isPopupOpen} onClose={closePopup} img={Puzzle1} input="5741" onAnswerCorrect={handleAnswerCorrect} />
+        <Popup isOpen={isPopupOpen} onClose={closePopup} img={Puzzle1} input1="5741" input2="1475" onAnswerCorrect={handleAnswerCorrect} />
         <button className="GbuttonStyle" id='Rafiah'>رفيع</button>
 
         {imageVisible && (
