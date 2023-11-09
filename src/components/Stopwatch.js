@@ -4,8 +4,8 @@ class Stopwatch extends Component {
   constructor() {
     super();
     this.state = {
-      initialTime: 600000,
-      currentTime: 600000,
+      initialTime: 10000,
+      currentTime: 10000,
     };
   }
 
