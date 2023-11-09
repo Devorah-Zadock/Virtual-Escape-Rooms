@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './GHome.css';
 import Stopwatch from '../components/Stopwatch';
 import GazaPortImg from '../images/puzzle1.png';
-import Missile from '../images/missile.jpg';
+import Missile from '../images/missile.png';
 import Popup from './Popup';
 import './Popup.css';
 import song from '../audio/background-music.mp3';
